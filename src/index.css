@@ -16,11 +16,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+div {
+	display: flex;
+}
+
 button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
 	border: none;
+	height: min-content;
 }
 
 a {
 	text-decoration: none;
+	cursor: pointer;
 }
