@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button<any>`
-	padding: 10px;
+	padding: 10px 20px;
 	width: 100%;
 	${({theme, isSquare}) => `
 		background-color: ${theme.colors.main.primary};
