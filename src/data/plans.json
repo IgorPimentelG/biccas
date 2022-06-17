@@ -1,0 +1,46 @@
+{
+	"plans": [
+		{
+			"name": "Free",
+			"description": "Have a go and test your superpowers",
+			"price": 0,
+			"promo": "",
+			"benefits": [
+				"2 Users",
+				"2 Files",
+				"Public Share & Comments",
+				"Chat Suport",
+				"New Income apps"
+			],
+			"label_redirect": "Signup for free"
+		},
+		{
+			"name": "Pro",
+			"description": "Experiment the power of infinite possibilities",
+			"price": 8,
+			"promo": "Save $50 a year",
+			"benefits": [
+				"4 Users",
+				"All Files",
+				"Unlimited editable exports",
+				"Folders and collaboration",
+				"All incoming apps"
+			],
+			"label_redirect": "Go to pro"
+		},
+		{
+			"name": "Business",
+			"description": "Unveil new superpowers and join the Design Leaque",
+			"price": 16,
+			"promo": "",
+			"benefits": [
+				"All the features of pro plan",
+				"Account success Manager",
+				"Single Sign-On (SSO)",
+				"Co-conception program",
+				"Collaboration-Soon"
+			],
+			"label_redirect": "Goto Business"
+		}
+	]
+}

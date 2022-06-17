@@ -7,18 +7,22 @@ export const RootContainer = styled.main`
 	height: 100vh;
 `;
 
-export const HomeSection = styled.section`
+export const Section = styled.section`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	background-image: linear-gradient(
 		to right bottom, rgba(84,189,149,0.2), #fff, #fff, rgba(84,189,149,0.2)
-		);
+	);
+`;
+
+export const ItemBenefit = styled.div`
+	margin: 10px 0;
+	align-items: center;
 `;
 
 export const ContentHome = styled.div`
 	margin-top: 50px;
-	align-items: center;
 	justify-content: space-around;
 `;
 
@@ -46,9 +50,9 @@ export const Line = styled.img`
 	margin: 20px 0  40px 0;
 `;
 
-export const Label = styled.p`
+export const Label = styled.p<any>`
 	font-size: 0.8rem;
-	color: #000;
+	color: ${({textColor}) => textColor};
 `;
 
 export const ContainerCompanies = styled.div`
@@ -58,6 +62,25 @@ export const ContainerCompanies = styled.div`
 	align-items: center;
 `;
 
-export const Subtitle = styled.h3`
-	font-size: 1.5rem;
+export const Subtitle = styled.h2<any>`
+	font-size: 1.8rem;
+	text-align: ${({textAlign}) => textAlign};
+	margin: ${({margin}) => margin + "px"};
+`;
+
+export const ContainerBenifits = styled.div`
+	margin: 30px 0;
+	flex-direction: column;
+`;
+
+export const ContainerPlans = styled.div`
+	width: 100%;
+	margin: 40px 0;
+	flex-direction: column;
+	align-items: center;
+`;
+
+export const ListPlans = styled.div`
+	margin: 40px 0;
+	justify-content: space-around;
 `;

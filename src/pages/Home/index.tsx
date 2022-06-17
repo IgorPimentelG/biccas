@@ -1,26 +1,35 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { CardCompanies, Footer, Header } from "@components/layout";
-import { Button } from "@components/ui";
-import { AiOutlinePlayCircle } from "react-icons/ai";
+import { CardCompanies, CardPlan, Footer, Header } from "@components/layout";
+import { benefinits, plans } from "@data";
+import { Button, Selector } from "@components/ui";
+import { AiOutlinePlayCircle, AiFillCheckCircle } from "react-icons/ai";
+import { useTheme } from "styled-components";
 import {
+	ContainerBenifits,
 	ContainerCompanies,
 	ContainerInfoHome,
 	ContainerOptionsHome,
+	ContainerPlans,
 	ContentHome,
-	HomeSection,
+	Section,
+	ItemBenefit,
 	Label,
 	Line,
 	MediumImage,
 	RootContainer,
 	Subtitle,
-	Title
+	Title,
+	ListPlans
 } from "./styles";
 
 const Home = () => {
+
+	const theme = useTheme();
+
 	return(
 		<RootContainer>
 
-			<HomeSection>
+			<Section>
 				<Header/>
 
 				<ContentHome>
@@ -61,8 +70,59 @@ const Home = () => {
 					<Subtitle>More than 25,000 teams use Collabs</Subtitle>
 					<CardCompanies/>
 				</ContainerCompanies>
+			</Section>
 
-			</HomeSection>
+			<Section>
+				<ContentHome>
+					<ContainerInfoHome>
+						<Subtitle>What Benifit Will<br/>You Get</Subtitle>
+
+						<ContainerBenifits>
+							{benefinits.map((item, index) => (
+								<ItemBenefit key={index}>
+									<AiFillCheckCircle
+										fill={theme.colors.main.primary}
+										style={{ marginRight: 10 }}
+										size={25}/>
+									<Label>{item}</Label>
+								</ItemBenefit>
+							))}
+						</ContainerBenifits>
+					</ContainerInfoHome>
+
+					<MediumImage src={require("../../assets/images/computer.png")}/>
+				</ContentHome>
+
+				<ContainerPlans>
+					<Subtitle textAlign="center" margin="20">
+						Choose Plan<br/>That{"'"}s Right For You
+					</Subtitle>
+
+					<Label textColor={theme.colors.text.secondary}>
+						Choose plan that works best for you, feel free to contact us
+					</Label>
+
+					<Selector
+						option1="Bil Monthly"
+						option2="Bil Yearly"
+					/>
+
+					<ListPlans>
+						{plans.map((item, index) => (
+							<CardPlan
+								key={index}
+								plan={{
+									...item,
+									labelRedirect: item.label_redirect,
+									highlighted: index === 1
+								}}
+							/>
+						))}
+					</ListPlans>
+				</ContainerPlans>
+
+
+			</Section>
 
 			<Footer/>
 
